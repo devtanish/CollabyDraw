@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { Button } from "./ui/button";
 import { authOptions } from "@/utils/auth";
 import { UserMenu } from "./UserMenu";
+import { JoinRoom } from "./JoinRoom";
 
     const session = await getServerSession(authOptions);
 
@@ -17,7 +18,10 @@ export default function Header() {
                 </Link>
                 <nav className="flex items-center space-x-4">
                 {session ? (
-                        <UserMenu email={session.user.email} />
+                        <>
+                        <JoinRoom />
+                        <UserMenu email={session.user.name} />
+                    </>
                     ) : (
                         <>
                             <Link href="/auth/signin">
