@@ -9,7 +9,8 @@
         "./types": "./src/types.ts"
     },
     "devDependencies": {
-        "@repo/typescript-config": "workspace:*"
+        "@repo/typescript-config": "workspace:*",
+        "@types/node": "^22.13.4"
     },
     "keywords": [],
     "author": "",
